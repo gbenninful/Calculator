@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Calculator</title>
+    <link href="Calculator.css" rel="stylesheet" />
+</head>
+<body>
+    <p>Enter First Number:
+        <input type="number"></p>
+    <p>Enter Second Number:
+        <input type="number"></p>
+    <p>Select an operator</p>
+    <input type="radio"><b>+</b><br>
+    <input type="radio"><b>&#8722;</b><br>
+    <input type="radio"><b>&times;</b><br>
+    <input type="radio"><b>&divide;</b><br>
+
+    <button type="submit" name="submitBtn" onclick="calculate()">Calculate</button>
+    <button type="reset" name="resetBtn" onclick="reset()">Reset</button><br />
+
+    <textarea name="result" id="" cols="35" rows="2"></textarea>
+
+    <script src="Calculator.js"></script>
+</body>
+</html>
