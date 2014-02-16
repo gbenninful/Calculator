@@ -1,68 +1,75 @@
-﻿"use strict";
+﻿(function () {
 
-var firstNumber = document.getElementsByName("firstNumber");
-var secondNumber = document.getElementsByName("secondNumber");
-var showTotal = document.getElementById("display");
+    "use strict";
 
-//Add function
-function add() {
-    if ((firstNumber.value !== "undefined") && (secondNumber.value !== "undefined")) {
+    var firstNumber = document.getElementsByName("firstNumber");
+    var secondNumber = document.getElementsByName("secondNumber");
+    var showTotal = document.getElementById("display");
 
+    //Add function
+    var add = function () {
+        //if ((firstNumber.value !== "undefined") && (secondNumber.value !== "undefined")) {
 
-        var result = firstNumber.value + secondNumber.value;
-        showTotal.innerHTML = result;
-    } else {
-        console.log("I've got some work to do!");
-    }
+        //    var result = firstNumber.value + secondNumber.value;
+        //    showTotal.innerHTML = result;
+        //} else {
+        //  console.log("I've got some work to do!");
+        //}
+        var result = (firstNumber[0].value) + (secondNumber[0].value);
+        document.getElementById("display").innerHTML = result;
+        console.log(typeof result)
+    };
 
-}
+    var subtract = function () {
+        var result = (firstNumber[0].value) - (secondNumber[0].value);
+        document.getElementById("display").innerHTML = result;
+        console(result);
+    };
 
+    var multiply = function () {
+        var result = (firstNumber[0].value) * (secondNumber[0].value);
+        document.getElementById("display").innerHTML = result;
+    };
 
-//Subract function
-function subtract(firstNumbmer, secondNumber) {
-    var result = firstNumber - secondNumber;
-    document.getElementById("display").innerHTML = result;
-}
+    var divide = function () {
+        var result = (firstNumber[0].value) / (secondNumber[0].value);
+        document.getElementById("display").innerHTML = result;
+    };
 
-//Multiply function
-function multiply(firstNumbmer, secondNumber) {
-    var result = firstNumber * secondNumber;
-    document.getElementById("display").innerHTML = result;
-}
+    var calculate = function () {
+        document.getElementById("calculateBtn").onclick = function () {
 
-//Divide function
-function divide(firstNumbmer, secondNumber) {
-    var result = firstNumber / secondNumber;
-    document.getElementById("display").innerHTML = result;
-}
+            var signs = document.getElementsByName("operator");
 
-function calculate() {
+            for (var i = 0; i < signs.length; i++) {
 
-    var signs = document.getElementsByName("operator");
+                if (signs[i].checked) {
 
-    for (var i = 0; i < signs.length; i++) {
+                    if (signs[i].value === "+") {
 
-        if (signs[i].checked) {
+                        add();
 
-            if (signs[i].value === "+") {
+                    } else if (signs[i].value === "-") {
 
-                //console.log("Calling the Addition function");
-                add();
+                        subtract();
 
-            } else if (signs[i].value === "-") {
-                console.log("Calling the Subtract function");
+                    } else if (signs[i].value === "*") {
 
-            } else if (signs[i].value === "*") {
+                        multiply();
 
-                console.log("Calling the Multiply function");
+                    } else if (signs[i].value === "/") {
 
-            } else if (signs[i].value === "/") {
-
-                console.log("Calling the Divide function");
-
+                        divide();
+                    }
+                }
             }
+        };
+    };
 
-        }
+    window.onload = function () {
+        calculate();
+        //reset();
+    };
 
-    }
-}
+}());
+
