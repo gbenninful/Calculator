@@ -8,35 +8,31 @@
 
     //Add function
     var add = function () {
-
-        console.log(typeof firstNumber[0].value);
-        firstNumber = parseFloat(firstNumber[0].value);
-        secondNumber = parseFloat(secondNumber[0].value);
-        var result = firstNumber + secondNumber;
+        var firstNumber1 = parseFloat(firstNumber[0].value);
+        var secondNumber2 = parseFloat(secondNumber[0].value);
+        var result = firstNumber1 + secondNumber2;
         showTotal.innerHTML = result;
-        console.log(typeof someFirstNumber[0].value);
-
     };
 
     var subtract = function () {
-        console.log(typeof firstNumber[0].value);
-        var result = (firstNumber[0].value) - (secondNumber[0].value);
+        var firstNumber1 = parseFloat(firstNumber[0].value);
+        var secondNumber2 = parseFloat(secondNumber[0].value);
+        var result = firstNumber1 - secondNumber2;
         showTotal.innerHTML = result;
-        console.log(typeof firstNumber[0].value);
     };
 
     var multiply = function () {
-        console.log(typeof firstNumber[0].value);
-        var result = (firstNumber[0].value) * (secondNumber[0].value);
+        var firstNumber1 = parseFloat(firstNumber[0].value);
+        var secondNumber2 = parseFloat(secondNumber[0].value);
+        var result = firstNumber1 * secondNumber2;
         showTotal.innerHTML = result;
-        console.log(typeof firstNumber[0].value);
     };
 
     var divide = function () {
-        console.log(typeof firstNumber[0].value);
-        var result = (firstNumber[0].value) / (secondNumber[0].value);
+        var firstNumber1 = parseFloat(firstNumber[0].value);
+        var secondNumber2 = parseFloat(secondNumber[0].value);
+        var result = firstNumber1 / secondNumber2;
         showTotal.innerHTML = result;
-        console.log(typeof firstNumber[0].value);
     };
 
     var calculate = function () {
